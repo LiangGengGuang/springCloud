@@ -38,3 +38,7 @@ MavenWrapperDownloader.java
 *.jar
 maven-wrapper.jar
 .DS_Store
+service-turbine/.mvn
+config-client/.mvn
+config-server/.mvn
+service-ribbon/.mvn
