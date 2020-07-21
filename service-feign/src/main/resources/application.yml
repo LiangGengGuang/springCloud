@@ -1,0 +1,17 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: service-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8011/eureka/ #访问服务注册地址
+feign:
+  hystrix:
+    enabled: true #开启feign自带断路器
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream #暴露hystrix.stream的监控信息

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-client #一般根据spring.application.name实现服务与服务之间相互调用
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8011/eureka/
+server:
+  port: 8020
