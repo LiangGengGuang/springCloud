@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 public class CilentAction {
 
     //注解来获取 Server 端参数的值
-    @Value("${info.profile:error}")
+    @Value("${info.profile}")
     private String profile;
 
     @GetMapping("/info")

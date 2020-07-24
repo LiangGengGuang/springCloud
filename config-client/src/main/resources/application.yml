@@ -1,13 +1,5 @@
-spring:
-  application:
-    name: config-client
-server:
-  port: 8061
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
-#  endpoint:
-#    bus-refresh:
-#      enabled: true
+# server:
+#   port: 8061
+# spring:
+#   application:
+#     name: config-client
