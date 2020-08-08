@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-server8002
+server:
+  port: 8002
+
+eureka:
+  instance:
+    hostname: eureka8002.com
+  client:
+    # 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+    # 搭载双节点或集群时，需要将两个参数改为true
+    register-with-eureka: false
+    fetch-registry: false
+    service-url: #使用集群时，需要制定其他server的"eureka.instance.hostname"和"server.port"，多个server使用","隔开
+      defaultZone: http://eureka8001.com:8001/eureka/
+
+

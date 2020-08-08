@@ -1,0 +1,25 @@
+server:
+  port:  8071
+
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: api-a
+          uri: http://localhost:8011
+          predicates:
+          path=/action/
+
+        - id: api-b
+          uri: http://localhost:8011
+          predicates:
+          path=/action02/
+
+eureka:
+  instance:
+    hostname: service-gateway
+  client:
+    service-url:
+      defaultZone: http://localhost:8011/eureka/

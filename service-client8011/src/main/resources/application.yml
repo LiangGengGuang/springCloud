@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: eureka-client #一般根据spring.application.name实现服务与服务之间相互调用
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+  instance:
+    instance-id: eureka-client8011
+server:
+  port: 8011
