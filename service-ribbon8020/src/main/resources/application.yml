@@ -6,7 +6,9 @@ eureka:
     service-url:
       defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
   instance:
-    instance-id: service-ribbon8020 #隐藏在注册中心的IP和PORT显示
+    instance-id: service-ribbon8020 # 隐藏在注册中心的IP和PORT显示
     prefer-ip-address: true # 浏览器左下方显示访问路径的IP
+    lease-renewal-interval-in-seconds: 30 # 心跳包发送频率 默认：30秒一次
+    lease-expiration-duration-in-seconds: 90 # 最后一次收到心跳包等待时间上线 默认：90秒
 server:
   port: 8020

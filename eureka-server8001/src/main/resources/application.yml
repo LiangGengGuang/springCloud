@@ -14,5 +14,10 @@ eureka:
     fetch-registry: false
     service-url: #使用集群时，需要制定其他server的"eureka.instance.hostname"和"server.port"，多个server使用","隔开
       defaultZone: http://eureka8002.com:8002/eureka/
+  server:
+    # 自我保护机制(在一段时间内没有收到注册表下client的心跳包时，短暂保存注册信息) 默认开启，关闭则立即删除
+    # eviction-interval-timer-in-ms 关闭自我保护机制后，设置多久时长删除注册信息
+    enable-self-preservation: true
+
 
 
