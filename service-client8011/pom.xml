@@ -7,9 +7,9 @@
         <artifactId>springCloud</artifactId>
         <version>1.O-SNAPSHOT</version>
     </parent>
-    <artifactId>eureka-client8011</artifactId>
-    <name>eureka-client8011</name>
-    <description>eureka-client8011</description>
+    <artifactId>service-client8011</artifactId>
+    <name>service-client8011</name>
+    <description>service-client8011</description>
 
     <properties>
         <java.version>1.8</java.version>

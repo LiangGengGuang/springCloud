@@ -16,9 +16,11 @@ public class RibbonService {
     @Autowired
     RestTemplate restTemplate;
 
+    private static final String CLIENT_SERVICE = "http://eureka-client/client";
+
     @HystrixCommand(fallbackMethod = "errorService")
     public String service(String name) {
-        return restTemplate.getForObject("http://eureka-client/client?name=" + name, String.class);
+        return restTemplate.getForObject(CLIENT_SERVICE + "?name=" + name, String.class);
     }
 
     public String errorService(String name) {

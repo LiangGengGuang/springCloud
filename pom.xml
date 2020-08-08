@@ -14,13 +14,13 @@
     <modules>
         <module>eureka-server8001</module>
         <module>eureka-server8002</module>
-        <module>eureka-client8010</module>
+        <module>service-client8010</module>
+        <module>service-client8011</module>
         <module>service-ribbon8020</module>
         <module>service-turbine8030</module>
         <module>config-server8040</module>
         <module>config-client8050</module>
         <module>service-gateway8060</module>
-        <module>eureka-client8011</module>
     </modules>
 
     <properties>
