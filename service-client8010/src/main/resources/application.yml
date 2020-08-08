@@ -6,6 +6,6 @@ eureka:
     service-url:
       defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
   instance:
-    instance-id: service-client8010 #隐藏路由及端口
+    instance-id: service-client8010
 server:
   port: 8010

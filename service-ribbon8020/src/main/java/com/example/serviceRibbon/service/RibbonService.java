@@ -1,4 +1,4 @@
-package com.example.serviceribbon.service;
+package com.example.serviceRibbon.service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class RibbonService {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String CLIENT_SERVICE = "http://eureka-client/client";
+    private static final String CLIENT_SERVICE = "http://service-client/client";
 
     @HystrixCommand(fallbackMethod = "errorService")
     public String service(String name) {
