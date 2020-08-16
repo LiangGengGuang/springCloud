@@ -6,7 +6,7 @@ spring:
     name: config-client
   cloud:
     config:
-      uri: http://localhost:8051 # 配置中心的具体地址，即 config-server
+      uri: http://localhost:8040 # 配置中心的具体地址，即 config-server
       label: master # 对应 {label} 部分，即 Git 的分支。如果配置中心使用的是本地存储，则该参数无用
       name: config-client # 对应 {application} 部分
       profile: dev # 对应 {profile} 部分
@@ -16,7 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
 #暴露监控端点
 management:
   endpoints:

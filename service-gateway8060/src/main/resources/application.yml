@@ -1,5 +1,5 @@
 server:
-  port:  8071
+  port:  8060
 
 spring:
   application:
@@ -7,19 +7,21 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: api-a
-          uri: http://localhost:8011
+        - id: ribbon-getObjectAction # 保持唯一
+          # uri更改为服务注册中心Application的名称，可以实现动态路由。
+          # 例子：lb://SERVICE-RIBBON "lb:"表示从微服务注册中心订阅服务(动态路由默认开启)。
+          uri: http://localhost:8020
           predicates:
-          path=/action/
+            - Path=/getObjectAction/**
 
-        - id: api-b
-          uri: http://localhost:8011
+        - id: ribbon-circuitBreaker
+          uri: http://localhost:8020
           predicates:
-          path=/action02/
+            - Path=/circuitBreaker/**
 
 eureka:
-  instance:
-    hostname: service-gateway
   client:
     service-url:
-      defaultZone: http://localhost:8011/eureka/
+      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+  instance:
+    instance-id: service-gateway8060

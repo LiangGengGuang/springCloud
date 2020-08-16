@@ -1,6 +1,10 @@
+server:
+  port: 8020
+
 spring:
   application:
     name: service-ribbon
+
 eureka:
   client:
     service-url:
@@ -10,5 +14,3 @@ eureka:
     prefer-ip-address: true # 浏览器左下方显示访问路径的IP
     lease-renewal-interval-in-seconds: 30 # 心跳包发送频率 默认：30秒一次
     lease-expiration-duration-in-seconds: 90 # 最后一次收到心跳包等待时间上线 默认：90秒
-server:
-  port: 8020
