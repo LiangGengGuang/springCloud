@@ -8,7 +8,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+      #      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+      defaultZone: http://eureka8001.com:8001/eureka/
   instance:
     instance-id: service-ribbon8020 # 隐藏在注册中心的IP和PORT显示
     prefer-ip-address: true # 浏览器左下方显示访问路径的IP

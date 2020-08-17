@@ -6,22 +6,36 @@ spring:
     name: service-gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true # 开启动态路由
       routes:
         - id: ribbon-getObjectAction # 保持唯一
           # uri更改为服务注册中心Application的名称，可以实现动态路由。
-          # 例子：lb://SERVICE-RIBBON "lb:"表示从微服务注册中心订阅服务(动态路由默认开启)。
-          uri: http://localhost:8020
+          # 例子：lb://SERVICE-RIBBON "lb:"表示从微服务注册中心订阅服务。
+          uri: lb://service-ribbon
+          #          uri: http://localhost:8020
           predicates:
+            #            - After=2020-08-17T11:03:36.128+08:00[Asia/Shanghai] # 当前时间之后才可对路由进行访问
+            #            - Before=2020-08-17T11:03:36.128+08:00[Asia/Shanghai] # 当前时间之前才可对路由进行访问
+            #            - Between=2020-08-17T11:03:36.128+08:00[Asia/Shanghai],2020-08-31T11:03:36.128+08:00[Asia/Shanghai] # 当前时间段才可对路由进行访问
+            #            - Cookie=username,lgg # --cookie "username=lgg"
+            #            - Header=X-Request-Id,\d+ # -H "X-Request-Id:111"
+            #            - Host=**.lgg.com # -H "Host:www.lgg.com" or -H "Host:news.lgg.com"
+            - Method=GET
             - Path=/getObjectAction/**
+            #            - Query=name,l.. # 包含name属性并且参数值是以l开头的长度为三位的字符串才会进行匹配和路由。
 
         - id: ribbon-circuitBreaker
-          uri: http://localhost:8020
+          uri: lb://service-ribbon
+          #          uri: http://localhost:8020
           predicates:
             - Path=/circuitBreaker/**
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+      #      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
+      defaultZone: http://eureka8001.com:8001/eureka/
   instance:
     instance-id: service-gateway8060
