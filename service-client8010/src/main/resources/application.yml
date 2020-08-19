@@ -1,6 +1,11 @@
 spring:
   application:
     name: service-client #一般根据spring.application.name实现服务与服务之间相互调用
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1 # 采集率介于0到1，1表示全部采集
 eureka:
   client:
     service-url:

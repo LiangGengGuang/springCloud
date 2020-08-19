@@ -21,6 +21,11 @@
         <module>config-server8040</module>
         <module>config-client8050</module>
         <module>service-gateway8060</module>
+        <module>nacos-provider9001</module>
+        <module>nacos-provider9002</module>
+        <module>nacos-cilent9010</module>
+        <module>nacos-config-client9020</module>
+        <module>nacos-sentinel9030</module>
     </modules>
 
     <properties>

@@ -18,6 +18,8 @@ eureka:
     service-url:
       #      defaultZone: http://eureka8001.com:8001/eureka/,http://eureka8002.com:8002/eureka/
       defaultZone: http://eureka8001.com:8001/eureka/
+  instance:
+    instance-id: config-client8050
 #暴露监控端点
 management:
   endpoints:

@@ -1,0 +1,15 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:1111 # 通过Nginx反向代理访问nacos集群
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

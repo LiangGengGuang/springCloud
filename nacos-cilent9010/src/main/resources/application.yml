@@ -1,0 +1,12 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:1111 # 通过Nginx反向代理访问nacos集群
+
+server-url:
+  nacos-user-service: http://nacos-provider

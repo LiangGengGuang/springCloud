@@ -1,4 +1,4 @@
-package com.example.servicegateway;
+package com.example.serviceGateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

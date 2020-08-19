@@ -11,10 +11,6 @@
     <name>service-ribbon8020</name>
     <description>service-ribbon8020</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <!--断路器-->
         <dependency>
@@ -22,8 +18,8 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>-->
+        <!--<groupId>org.springframework.cloud</groupId>-->
+        <!--<artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>-->
         <!--</dependency>-->
         <!--服务注册和发现模块 与ribbon整合实现负载均衡客户端-->
         <dependency>

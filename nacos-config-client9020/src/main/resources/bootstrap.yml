@@ -1,0 +1,20 @@
+server:
+  port: 9020
+spring:
+  application:
+    # prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+    # ${prefix}-${spring.profiles.active}.${file-extension}，当前nacos-config-client-dev.yml
+    name: nacos-config-client
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # nacos作为服务中心地址
+        server-addr: localhost:1111 # 通过Nginx反向代理访问nacos集群
+      config:
+        # nacos作为配置中心地址
+        server-addr: localhost:1111 # 通过Nginx反向代理访问nacos集群
+        file-extension: yml
+        namespace: a637d720-1e19-437e-be5d-60ed044d4837 # 命名空间ID，不配置默认为DEFAULT_GROUP
+        group: DEV_GROUP # 不配置默认DEFAULT_GROUP
