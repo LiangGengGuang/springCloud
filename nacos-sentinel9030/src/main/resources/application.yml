@@ -1,0 +1,20 @@
+server:
+  port: 9030
+spring:
+  application:
+    name: nacos-sentinel
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:1111
+    sentinel:
+      transport:
+        dashboard: localhost:8080 # 配置sentinel监控 默认：8080
+        # 将端口默认改为8719，如果端口被占用自动扫描+1，直至端口未被占用
+        port: 8719
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: '*'
