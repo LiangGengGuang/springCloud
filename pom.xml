@@ -26,6 +26,9 @@
         <module>nacos-cilent9010</module>
         <module>nacos-config-client9020</module>
         <module>nacos-sentinel9030</module>
+        <module>seata-order9040</module>
+        <module>seata-storage9041</module>
+        <module>seata-account9042</module>
     </modules>
 
     <properties>
@@ -38,7 +41,7 @@
         <lombok.version>1.18.10</lombok.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.16</druid.version>
-        <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <cloud.version>Hoxton.SR1</cloud.version>
     </properties>
 
@@ -82,9 +85,9 @@
             </dependency>
 
             <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.version}</version>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
 
             <dependency>

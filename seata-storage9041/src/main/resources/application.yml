@@ -1,0 +1,23 @@
+server:
+  port: 9041
+spring:
+  application:
+    name: seata-storage
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seata_storage?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+logging:
+  level:
+    io:
+      seata: info

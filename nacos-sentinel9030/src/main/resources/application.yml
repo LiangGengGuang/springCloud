@@ -12,6 +12,14 @@ spring:
         dashboard: localhost:8080 # 配置sentinel监控 默认：8080
         # 将端口默认改为8719，如果端口被占用自动扫描+1，直至端口未被占用
         port: 8719
+      datasource: #持久化配置
+        ds1:
+          nacos:
+            server-addr: localhost:1111
+            dataId: nacos-sentinel
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 management:
   endpoints:
