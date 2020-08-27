@@ -34,6 +34,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @GlobalTransactional(name = "seata-create-order", rollbackFor = Exception.class)
     public void create(Order order) {
+
         log.info("=======创建订单");
         this.orderMapper.insert(order);
 
