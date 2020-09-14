@@ -13,4 +13,6 @@ public interface OrderService {
     void create(Order order);
 
     void updateStatus(Long userId);
+
+    String getSnowflake();
 }

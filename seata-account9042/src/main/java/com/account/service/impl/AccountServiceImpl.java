@@ -35,6 +35,7 @@ public class AccountServiceImpl implements AccountService {
                 .set(Account::getResidue, account.getResidue().subtract(money))
                 .set(Account::getUsed, account.getUsed().add(money))
                 .eq(Account::getUserId, userId).update();
+        log.info("=======账户余额扣减成功");
     }
 
     @Override

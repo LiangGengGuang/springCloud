@@ -30,4 +30,11 @@ public class OrderController {
         this.orderService.create(order);
         return new CommonResult(200, "订单创建成功");
     }
+
+    @GetMapping("/getSnowflake")
+    public CommonResult getSnowflake() {
+        return new CommonResult(200, "雪花算法生成成功", this.orderService.getSnowflake());
+    }
+
+
 }

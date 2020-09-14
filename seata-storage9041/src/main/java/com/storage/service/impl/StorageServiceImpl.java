@@ -28,6 +28,7 @@ public class StorageServiceImpl implements StorageService {
                 .set(Storage::getResidue, storage.getResidue() - count)
                 .set(Storage::getUsed, storage.getUsed() + count)
                 .eq(Storage::getProductId, productId).update();
+        log.info("=======库存存货扣减成功");
     }
 
     @Override
